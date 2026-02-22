@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-        stage('Checkout Jenkins Upgrade3 Git Repository') {
+        stage('Checkout Jenkins Practice Git Repository') {
             steps {
                 script {
                     // Clone the Git repository's master branch
