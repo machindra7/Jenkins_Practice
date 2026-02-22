@@ -12,11 +12,11 @@ pipeline {
             steps {
                 sh '''
                     curl -fsSL https://get.docker.com -o get-docker.sh
-                    sudo sh get-docker.sh
-                    sudo systemctl start docker
-                    sudo systemctl enable docker
-                    sudo systemctl status docker
-                    sudo docker --version
+                    sh get-docker.sh
+                    systemctl start docker
+                    systemctl enable docker
+                    systemctl status docker
+                     docker --version
                 '''
             }
         }
@@ -24,9 +24,9 @@ pipeline {
         stage('Add Jenkins User to Docker Group') {
             steps {
                 sh '''
-                    sudo apt-get update
-                    sudo usermod -aG docker jenkins
-                    sudo systemctl restart docker
+                    apt-get update
+                    usermod -aG docker jenkins
+                    systemctl restart docker
                 '''
             }
         }
