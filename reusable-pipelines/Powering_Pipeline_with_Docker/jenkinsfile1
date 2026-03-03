@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:latest'
-            args '--entrypoint="" -v /var/lib/jenkins/.m2:/root/.m2'
+            args '-u root'
         }
     }
     
